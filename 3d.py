@@ -19,7 +19,7 @@ ax.plot_surface(x, y, d3, cmap=cm.copper)
 ax.set_xlim(0, d30-1)
 ax.set_ylim(0, d31-1)
 
-plt.plot(x[d3==6], y[d3==6], d3[d3==6], 'yx')
+plt.plot(x[d3==6], y[d3==6], d3[d3==6], 'y*', markersize=10)
 ax.set_xticks([],[])
 ax.set_yticks([],[])
 ax.set_zticks([],[])
