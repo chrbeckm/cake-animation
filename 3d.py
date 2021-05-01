@@ -7,15 +7,14 @@ from matplotlib.animation import FuncAnimation, PillowWriter
 d3 = np.genfromtxt('data/3d.csv', delimiter=',', missing_values='')
 
 d30, d31 = d3.shape
-print(d3.shape)
 
 x = np.outer(np.arange(d30), np.ones(d30))
 y = np.outer(np.arange(d31), np.ones(d31)).T
-print(x)
+
 fig = plt.figure(constrained_layout=True)
 ax = mplot3d.Axes3D(fig)
 
-ax.plot_surface(x, y, d3, cmap=cm.copper)
+ax.plot_surface(x, y, d3, cmap=cm.Blues)
 ax.set_xlim(0, d30-1)
 ax.set_ylim(0, d31-1)
 
