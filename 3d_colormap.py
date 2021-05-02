@@ -15,15 +15,18 @@ y = np.outer(np.arange(d31), np.ones(d31)).T
 
 def plot_color_gradients(cmap_category, cmap_list):
     for name in cmap_list:
-        fig = plt.figure(constrained_layout=True)
+        fig = plt.figure()
         ax = mplot3d.Axes3D(fig)
         ax.plot_surface(x, y, d3, cmap=plt.get_cmap(name))
         ax.set_xlim(0, d30-1)
         ax.set_ylim(0, d31-1)
         plt.plot(x[d3==6], y[d3==6], d3[d3==6], 'y*', markersize=10)
-        ax.set_xticks([],[])
-        ax.set_yticks([],[])
-        ax.set_zticks([],[])
+        ax.set_xticks([])
+        ax.set_xticklabels([])
+        ax.set_yticks([])
+        ax.set_yticklabels([])
+        ax.set_zticks([])
+        ax.set_zticklabels([])
         plt.savefig(f'build/3d-{cmap_category}-{name}.png')
 
 
